@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Blog {% endblock %}
+
+{% block extra_header %}
+<link rel="stylesheet" href="{% static 'blog/css/post_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="section">
+    <form action="" method="get" class="search-form">
+        <input type="text" name="search" value="{{ request.GET.search }}" placeholder="Search post..." class="search-input" id="searchInput" autocomplete="off" required>
+        <input type="submit" value="Search" class="search-btn" id="searchBtn">
+    </form>
+
+    <div class="tags-container">
+        {% for tag in tags %}
+            <a href="?tag={{ tag.slug }}" class="tag-card">{{ tag.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="section">
+    <span class="section-title">Blog Posts</span>
+
+    <div class="section-body">
+        <div class="posts-container">
+            {% with posts=page_obj %}
+                {% for post in posts %}
+                    <div class="post-card">
+                        <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
+                        <a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title|truncatewords:50 }}</a>
+                    </div>
+                {% empty %}
+                    <p>No posts yet</p>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+
+{% include 'includes/pagination.html' %}
+
+{% endblock %}

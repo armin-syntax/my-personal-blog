@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block extra_header %}
+<link rel="stylesheet" href="{% static 'blog/css/post_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="section">
+    <span class="section-title">Hello World!</span>
+
+    <div class="section-body">
+        Hi, I’m Armin — a backend developer who loves building reliable and scalable systems.  
+        I work mainly with Python, Django, and Django REST Framework, focusing on clean API design, database structure, and Linux‑based deployments.  
+        I also enjoy working with JavaScript and React when I need to build things on the frontend.  
+        Here I share my experiences, thoughts, and lessons learned along the way in software development.
+    </div>
+</div>
+
+<div class="section">
+    <span class="section-title">Recently Posts</span>
+
+    <div class="section-body">
+        <div class="posts-container">
+            {% for post in posts %}
+                <div class="post-card">
+                    <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
+                    <a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title|truncatewords:50 }}</a>
+                </div>
+            {% empty %}
+                <p>No posts yet</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

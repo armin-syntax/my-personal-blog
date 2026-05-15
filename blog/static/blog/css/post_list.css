@@ -1,0 +1,88 @@
+:root {
+  --gray-1: #f9f9f9;  /* Main background (Very light gray) */
+  --gray-2: #e0e0e0;  /* Borders, dividers, secondary text */
+  --gray-3: #333333;  /* Primary text color (Dark gray) */
+  --gray-4: #1a1a1a;  /* Headings, footer, or very dark accents */
+
+  --primary: #d65db1;       /* Base link/button color */
+  --primary-hover: #9b3082; /* Darker shade for hover state */
+
+  --secondary: #6c757d;     /* Muted gray for disabled states or tags */
+  --secondary-hover: #5a6268;
+}
+
+
+.content-primary {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.post-card {
+    width: fit-content;
+    padding-bottom: 0.5rem;
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid var(--gray-2);
+}
+
+.post-date {
+    white-space: nowrap;
+    color: var(--secondary);
+}
+
+.post-title {}
+
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-form input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-input {
+    width: 100%;
+    background-color: var(--gray-2);
+}
+
+.search-btn {
+    width: fit-content;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary);
+}
+
+.search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-card {
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: var(--gray-2);
+}
+
+.tag-card:hover {
+    color: white;
+    background-color: var(--primary-hover);
+}

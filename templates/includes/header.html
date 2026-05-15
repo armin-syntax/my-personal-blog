@@ -1,0 +1,17 @@
+{% load static %}
+<div class="site-header">
+    <img src="{% static 'public/images/website-logo.svg' %}" alt="website-logo" class="site-logo">
+    
+    <div class="navbar">
+    <span class="site-owner">Armin Emami</span>
+    
+    <div class="navbar-links">
+        <span class="nav-item">
+        <a href="{% url 'home' %}" class="nav-link">Home</a>
+        </span>
+        <span class="nav-item">
+        <a href="{% url 'blog:post-list' %}" class="nav-link">Blog</a>
+        </span>
+    </div>
+    </div>
+</div>
