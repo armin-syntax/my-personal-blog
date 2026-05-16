@@ -11,7 +11,7 @@ class PostListView(View):
 
     def get(self, request):
         tags = Tag.objects.all()
-        posts = Post.objects.all()
+        posts = Post.objects.filter(is_published=True)
 
         if request.GET.get('tag'):
             tag = request.GET['tag']
