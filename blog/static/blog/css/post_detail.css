@@ -1,17 +1,3 @@
-:root {
-  --gray-1: #f9f9f9;  /* Main background (Very light gray) */
-  --gray-2: #e0e0e0;  /* Borders, dividers, secondary text */
-  --gray-3: #333333;  /* Primary text color (Dark gray) */
-  --gray-4: #1a1a1a;  /* Headings, footer, or very dark accents */
-
-  --primary: #d65db1;       /* Base link/button color */
-  --primary-hover: #9b3082; /* Darker shade for hover state */
-
-  --secondary: #6c757d;     /* Muted gray for disabled states or tags */
-  --secondary-hover: #5a6268;
-}
-
-
 .post-container {
   display: flex;
   flex-direction: column;

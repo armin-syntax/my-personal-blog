@@ -10,15 +10,15 @@
 {% block content %}
 
 <div class="section">
-    <div class="post-container">
-        <div class="post-info">
-            <span class="post-title">{{ post.title }}</span>
-            <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
-        </div>
-        <div class="post-body" id="postBody">
-            {{ post.body|linebreaksbr|urlize }}
-        </div>
+  <div class="post-container">
+    <div class="post-info">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
     </div>
+    <div class="post-body" id="postBody">
+      {{ post.body|linebreaksbr|urlize }}
+    </div>
+  </div>
 </div>
 
 {% endblock %}

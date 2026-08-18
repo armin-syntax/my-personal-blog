@@ -2,23 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'public/css/public.css' %}">
-    {% block extra_header %}{% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'public/css/public.css' %}">
+  {% block extra_header %}{% endblock %}
 </head>
 <body>
 
-    <div class="page-layout">
-        {% include 'includes/header.html' %}
+  <div class="page-layout">
+    {% include 'includes/header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'includes/footer.html' %}
+  </div>
 
-        {% block content %}{% endblock %}
+  {% block extra_body %}{% endblock %}
 
-        {% include 'includes/footer.html' %}
-    </div>
-
-    {% block extra_body %}{% endblock %}
-    
 </body>
 </html>
